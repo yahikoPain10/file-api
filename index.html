@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Load text & images</title>
+</head>
+<style>
+  img {
+    max-width: 500px;
+  }
+  pre {
+    background-color: whitesmoke;
+    padding: 1rem;
+    overflow: auto;
+    border: 1px solid darkgray;
+  }
+  .v-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+  }
+  .v-hidden:focus + label {
+    outline: 1px solid blue;
+  }
+</style>
+<body>
+  <h1>Load text & images</h1>
+  <fieldset>
+    <legend>Options</legend>
+    <input type="checkbox" id="dataurl">
+    <label for="dataurl">Read images as dataurl</label>
+  </fieldset>
+  <input class="v-hidden" type="file" id="file" accept="image/*, text/*" multiple>
+  <label for="file">Using a label</label>
+  <button onclick="document.getElementById('file').click()">Using a button</button>
+  <div id="content"></div>
+  <script src="file.js"></script>
+</body>
+</html>
